@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" >
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" type="text/css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" type="text/css" />
-  <link rel="stylesheet" href="CSS/styles.css" type="text/css" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js" type="text/javascript"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js   " type="text/javascript"></script>
 </head>
@@ -35,21 +35,35 @@
     <legend>Mr. Robot's Top Robot Models</legend>
     <script>
     
-    $(function() {
-      $("li article img ").on("mouseover", function () {
-      console.log("User hovered over image!!")
-     });
-    });
+        $(function() {
+          
+          // $("li article img").on("mouseover", function () {
+
+          // });
+          
+          $("li article img").on({
+              mouseenter: function () {
+              $(this).css('width', '230px');  //stuff to do on mouse enter
+               console.log("I think you're over the robot bro!!!"); 
+              },
+              
+              mouseleave: function () {
+              $(this).css('width', '210px');
+              console.log("I think you just left the robot bro!!!");    //stuff to do on mouse leave
+              }
+          });
+        });
     </script>
 
     <ul>
       <li>
         <article id="robo1">
           <h4>
-            <label for="imgrobo1">  Name:</label> R.E.T.
-          </h4>
-          <img id="imgrobo1" src="images/roboDog.png" width=200 height=200 alt="robo1">
-
+            <label for="imgrobo1">  Name:</label> 
+            R.E.T.</h4>
+          <div class="robot-img-container">  
+          <img id="imgrobo1" class="robot-img" src="images/roboDog.png" width=200px height=auto alt="robo1">
+          </div>
           <h5><strong>Description:</strong> <br>This was our first robot. He was modeled after the famous movie character E.T.</h5>
         </article>
       </li>
@@ -59,8 +73,9 @@
           <h4>
             <label for="imgrobo2">  Name:</label> Butler.Bot
           </h4>
-          <img id="imgrobo2" src="images/robot2.png" width=200 height=200 alt="robo1">
-
+          <div class="robot-img-container">
+          <img id="imgrobo2" class="robot-img" src="images/robot2.png" width=200px height=auto alt="robo1">
+          </div>
           <h5><strong>Description:</strong> <br>This was our second robot. He makes a mean martini!</h5>
         </article>
       </li>
@@ -68,8 +83,9 @@
         <article id="robo3">
           <h4>
             <label for="imgrobo3">  Name:</label> Mega Man</h4>
-          <img id="imgrobo3" src="images/robot3.png" width=200 height=200 alt="robo1">
-
+            <div class="robot-img-container">
+              <img id="imgrobo3" class="robot-img" src="images/robot3.png" width=200px height=auto alt="robo1">
+            </div>
           <h5><strong>Description:</strong> <br>This is our newest model. This one will follow you around the house.</h5>
 
         </article>
@@ -97,24 +113,24 @@
     </article>
   </template>
 
-  <script>
-    var robo = document.querySelector('#robo1').createShadowRoot();
-    /*Step1*/
-    let prdTemplate = document.querySelector('#producttemplate');
-    /*Step2*/
-    let clone = document.importNode(prdTemplate.content, true);
-    /*Step3*/
-    clone.querySelector('#pimage').src = 'images/roboDog.png';
-    clone.querySelector('#lblName').textContent = 'R.E.T';
-    /*Step4*/
-    robo.appendChild(clone);
-    let userTemplate = document.querySelector('#user');
-    let userClone = document.importNode(userTemplate.content, true);
-    document.body.appendChild(userClone);
-    let addressTemplate = document.querySelector('#address');
-    let addressClone = document.importNode(addressTemplate.content, true);
-    document.body.appendChild(addressClone);
-  </script>
+  <!--<script>-->
+  <!--  var robo = document.querySelector('#robo1').createShadowRoot();-->
+    <!--// /*Step1*/-->
+  <!--  let prdTemplate = document.querySelector('#producttemplate');-->
+    <!--/*Step2*/-->
+  <!--  let clone = document.importNode(prdTemplate.content, true);-->
+    <!--/*Step3*/-->
+  <!--  clone.querySelector('#pimage').src = 'images/roboDog.png';-->
+  <!--  clone.querySelector('#lblName').textContent = 'R.E.T';-->
+    <!--/*Step4*/-->
+  <!--  robo.appendChild(clone);-->
+  <!--  let userTemplate = document.querySelector('#user');-->
+  <!--  let userClone = document.importNode(userTemplate.content, true);-->
+  <!--  document.body.appendChild(userClone);-->
+  <!--  let addressTemplate = document.querySelector('#address');-->
+  <!--  let addressClone = document.importNode(addressTemplate.content, true);-->
+  <!--  document.body.appendChild(addressClone);-->
+  <!--</script>-->
 </body>
 
 </html>
