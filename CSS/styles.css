@@ -76,8 +76,8 @@ footer {
 
 .headerlogo img {
    margin-top: 0;
-   width:140px; 
-   height:96px;
+   width:130px; 
+   height:84px;
 }
 
 .searchbox {
@@ -92,4 +92,12 @@ footer {
 
 .smalltext {
    display: inline-grid;
+}
+
+.footerParagraph {
+   color: red;
+}
+
+.footerAddress {
+   color: red;
 }
