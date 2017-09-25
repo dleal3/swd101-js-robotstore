@@ -31,6 +31,51 @@
     <div id="welcomeimage">
       <img src="images/Mr.-Robot-Welcome.png" height="400px" alt="About us">
     </div>
+    
+    <script>
+      $(function(){
+          $("form p input").on({        
+            mouseenter: function () {
+            $(this).css('background-color', '#337ab7');  //stuff to do on mouse enter
+            console.log("I think you're over the robot bro!!!"); 
+            },
+            mouseleave: function () {
+            $(this).css('background-color', 'white');
+            console.log("I think you just left the robot bro!!!");    //stuff to do on mouse leave
+            }
+          });
+          $("p select").on({        
+            mouseenter: function () {
+            $(this).css('background-color', '#337ab7');  //stuff to do on mouse enter
+            console.log("I think you're over the robot bro!!!"); 
+            },
+            mouseleave: function () {
+            $(this).css('background-color', 'white');
+            console.log("I think you just left the robot bro!!!");    //stuff to do on mouse leave
+            }
+          });          
+          $("p textarea").on({        
+            mouseenter: function () {
+            $(this).css('background-color', '#337ab7');  //stuff to do on mouse enter
+            console.log("I think you're over the robot bro!!!"); 
+            },
+            mouseleave: function () {
+            $(this).css('background-color', 'white');
+            console.log("I think you just left the robot bro!!!");    //stuff to do on mouse leave
+            }
+          });           
+          $("p button").on({        
+            mouseenter: function () {
+            $(this).css('background-color', '#337ab7');  //stuff to do on mouse enter
+            console.log("I think you're over the robot bro!!!"); 
+            },
+            mouseleave: function () {
+            $(this).css('background-color', 'white');
+            console.log("I think you just left the robot bro!!!");    //stuff to do on mouse leave
+            }
+          });          
+      });
+    </script>
 <form id="contactForm">
   <fieldset>
     <div>
@@ -42,7 +87,7 @@
     <label for="email">   Email:</label><input type="email" name="email" id="email">
 </p>
 <p>
-    <label for="yloc">   Loaction:</label>
+    <label for="yloc">   Location:</label>
     <select name="" id="yloc">
       <option value="0">Moon</option>
       <option value="1">Earth</option>
